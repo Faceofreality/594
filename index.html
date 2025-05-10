@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>594 ANTI EXTORT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -14,32 +17,50 @@
     body {
       background-color: #000000;
       color: #ffffff;
-      font-family: serif;
+      font-family: 'Cinzel', serif;
       padding: 50px 20px;
       text-align: center;
     }
     
     .title-container {
-      margin-bottom: 50px;
+      margin-bottom: 80px;
     }
     
     .main-title {
-      font-size: 120px;
-      font-weight: bold;
+      font-size: 140px;
+      font-weight: 600;
       letter-spacing: 2px;
       margin-bottom: 0;
+      transition: all 0.3s ease;
+    }
+    
+    .main-title:hover {
+      text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+      transform: scale(1.05);
     }
     
     .subtitle {
       font-size: 18px;
       letter-spacing: 8px;
-      margin-top: 0;
+      margin-top: 5px;
+      color: #ffffff;
+      text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+    
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000;
+      }
+      to {
+        text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000;
+      }
     }
     
     .members {
       display: flex;
       justify-content: center;
-      gap: 20px;
+      gap: 30px;
       flex-wrap: wrap;
       max-width: 1000px;
       margin: 0 auto;
@@ -49,30 +70,24 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      transition: transform 0.3s ease;
+    }
+    
+    .member:hover {
+      transform: translateY(-5px);
     }
     
     .avatar {
       width: 180px;
       height: 180px;
       position: relative;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
     }
     
     .avatar-bg {
       width: 100%;
       height: 100%;
       background-color: #333;
-    }
-    
-    .avatar-head {
-      position: absolute;
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
-      top: 40px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 2;
     }
     
     .custom-pfp {
@@ -102,22 +117,7 @@
     .member-name {
       font-size: 16px;
       font-weight: normal;
-    }
-    
-    .scarlett .avatar-head {
-      background-color: #ff0000;
-    }
-    
-    .cyanide .avatar-head {
-      background-color: #00c7ff;
-    }
-    
-    .factor .avatar-head {
-      background-color: #76ff22;
-    }
-    
-    .sinister .avatar-head {
-      background-color: #9900ff;
+      opacity: 0.9;
     }
   </style>
 </head>
@@ -129,50 +129,38 @@
     </div>
     
     <div class="members">
-      <div class="member scarlett">
+      <div class="member">
         <div class="avatar">
           <div class="avatar-bg"></div>
           <div class="avatar-body"></div>
-          <!-- Replace with your pfp by adding an img tag here -->
-          <img src="pfp1.jpg" class="custom-pfp" alt="Scarlett">
-          <!-- Keep the colored head as fallback -->
-          <div class="avatar-head" style="display: none;"></div>
+          <img src="https://i.imgur.com/FMN83Uz.png" class="custom-pfp" alt="Scarlett">
         </div>
         <div class="member-name">Scarlett</div>
       </div>
       
-      <div class="member cyanide">
+      <div class="member">
         <div class="avatar">
           <div class="avatar-bg"></div>
           <div class="avatar-body"></div>
-          <!-- Replace with your pfp by adding an img tag here -->
-          <img src="pfp2.jpg" class="custom-pfp" alt="Cyanide">
-          <!-- Keep the colored head as fallback -->
-          <div class="avatar-head" style="display: none;"></div>
+          <img src="https://i.imgur.com/BpLnM3V.png" class="custom-pfp" alt="Cyanide">
         </div>
         <div class="member-name">Cyanide</div>
       </div>
       
-      <div class="member factor">
+      <div class="member">
         <div class="avatar">
           <div class="avatar-bg"></div>
           <div class="avatar-body"></div>
-          <!-- Replace with your pfp by adding an img tag here -->
-          <img src="pfp3.jpg" class="custom-pfp" alt="Factor">
-          <!-- Keep the colored head as fallback -->
-          <div class="avatar-head" style="display: none;"></div>
+          <img src="https://i.imgur.com/Y2jPCIX.png" class="custom-pfp" alt="Factor">
         </div>
         <div class="member-name">Factor</div>
       </div>
       
-      <div class="member sinister">
+      <div class="member">
         <div class="avatar">
           <div class="avatar-bg"></div>
           <div class="avatar-body"></div>
-          <!-- Replace with your pfp by adding an img tag here -->
-          <img src="pfp4.jpg" class="custom-pfp" alt="Sinister">
-          <!-- Keep the colored head as fallback -->
-          <div class="avatar-head" style="display: none;"></div>
+          <img src="https://i.imgur.com/t6b3LAe.png" class="custom-pfp" alt="Sinister">
         </div>
         <div class="member-name">Sinister</div>
       </div>
