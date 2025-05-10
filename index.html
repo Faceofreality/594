@@ -98,10 +98,47 @@
       font-weight: normal;
       opacity: 0.9;
     }
+    
+    .ascii-logo {
+      margin-bottom: 30px;
+    }
+    
+    .ascii-logo pre {
+      font-family: monospace;
+      font-size: 10px;
+      line-height: 1;
+      color: #ffffff;
+      text-align: center;
+      opacity: 0.7;
+      user-select: none;
+      text-shadow: 0 0 5px #ff0000;
+      animation: pulse 2s infinite alternate;
+    }
+    
+    @keyframes pulse {
+      from {
+        opacity: 0.4;
+      }
+      to {
+        opacity: 0.7;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="container">
+    <div class="ascii-logo">
+<pre>
+  *********   *********    ****     
+ ***********  *********** ******    
+****     **** ****    *** ***  ***  
+****          ****    *** ***   *** 
+****          *********** ***   *** 
+****     **** *********** ***   *** 
+ ***********  ****        ***   *** 
+  *********   ****        ***    ***
+</pre>
+    </div>
     <div class="title-container">
       <h1 class="main-title">594</h1>
       <h2 class="subtitle">A N T I &nbsp; E X T O R T</h2>
