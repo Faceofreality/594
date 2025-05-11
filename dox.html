@@ -119,6 +119,54 @@
       margin: 25px 0 15px;
       font-size: 18px;
       letter-spacing: 1px;
+      cursor: pointer;
+      user-select: none;
+      display: flex;
+      align-items: center;
+    }
+    
+    .dox-content h3::before {
+      content: "+";
+      display: inline-block;
+      margin-right: 10px;
+      width: 20px;
+      transition: transform 0.3s ease;
+    }
+    
+    .dox-content h3.active::before {
+      content: "-";
+      transform: rotate(0deg);
+    }
+    
+    .dox-section {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+      opacity: 0;
+    }
+    
+    .dox-section.active {
+      max-height: 500px;
+      opacity: 1;
+      transition: max-height 0.5s ease, opacity 0.5s ease 0.1s;
+    }
+    
+    .data-row {
+      display: flex;
+      border-left: 2px solid rgba(255, 0, 0, 0.3);
+      padding-left: 15px;
+      margin-bottom: 12px;
+    }
+    
+    .data-label {
+      width: 120px;
+      color: #888;
+      font-size: 14px;
+    }
+    
+    .data-value {
+      flex: 1;
+      color: #ddd;
     }
     
     .dox-timestamp {
@@ -127,6 +175,16 @@
       margin-top: 40px;
       font-style: italic;
       text-align: right;
+    }
+    
+    .discord-tag {
+      background: linear-gradient(45deg, #5865F2, #7289DA);
+      display: inline-block;
+      padding: 5px 12px;
+      border-radius: 4px;
+      font-weight: bold;
+      margin-top: 10px;
+      box-shadow: 0 0 10px rgba(114, 137, 218, 0.5);
     }
   </style>
 </head>
@@ -150,24 +208,96 @@
     </div>
     
     <div class="dox-content">
-      <h3>PERSONAL INFORMATION</h3>
-      <p>Subject known as "Plug" has been identified through multiple sources.</p>
-      <p>Active online presence in various forums and social media platforms.</p>
+      <h3 id="personal-info-header">TECHNICAL INFORMATION</h3>
+      <div id="personal-info" class="dox-section">
+        <div class="data-row">
+          <div class="data-label">Decimal:</div>
+          <div class="data-value">3627734245</div>
+        </div>
+        <div class="data-row">
+          <div class="data-label">Hostname:</div>
+          <div class="data-value">ams16s22-in-f229.1e100.net / lhr25s28-in-f5.1e100.net / ams16s22-in-f5.1e100.net</div>
+        </div>
+        <div class="data-row">
+          <div class="data-label">ASN:</div>
+          <div class="data-value">15169</div>
+        </div>
+        <div class="data-row">
+          <div class="data-label">ISP:</div>
+          <div class="data-value">Google LLC</div>
+        </div>
+        <div class="data-row">
+          <div class="data-label">Services:</div>
+          <div class="data-value">Datacenter</div>
+        </div>
+      </div>
       
-      <h3>ACTIVITIES</h3>
-      <p>Connected to multiple online groups since 2019.</p>
-      <p>Involved in various online communities dedicated to cybersecurity discussions.</p>
-      <p>Regular participant in tech forums and information exchange platforms.</p>
+      <h3 id="location-header">LOCATION DATA</h3>
+      <div id="location" class="dox-section">
+        <div class="data-row">
+          <div class="data-label">Country:</div>
+          <div class="data-value">United Kingdom of Great Britain and Northern Ireland</div>
+        </div>
+        <div class="data-row">
+          <div class="data-label">State/Region:</div>
+          <div class="data-value">England</div>
+        </div>
+        <div class="data-row">
+          <div class="data-label">City:</div>
+          <div class="data-value">London</div>
+        </div>
+        <div class="data-row">
+          <div class="data-label">Latitude:</div>
+          <div class="data-value">51.5085 (51° 30′ 30.71″ N)</div>
+        </div>
+        <div class="data-row">
+          <div class="data-label">Longitude:</div>
+          <div class="data-value">-0.1257 (0° 7′ 32.66″ W)</div>
+        </div>
+      </div>
       
-      <h3>ADDITIONAL NOTES</h3>
-      <p>Maintains strict operational security measures.</p>
-      <p>Known for high-quality technical contributions and precise information sharing.</p>
-      <p>Clean reputation among community members - trusted source.</p>
+      <h3 id="contact-header">CONTACT INFO</h3>
+      <div id="contact" class="dox-section">
+        <div class="data-row">
+          <div class="data-label">Discord:</div>
+          <div class="data-value">
+            <span class="discord-tag">23.30.24arethegoats</span>
+          </div>
+        </div>
+        <p>Subject known as "Plug" maintains strict operational security measures.</p>
+        <p>Known for high-quality technical contributions and precise information sharing.</p>
+        <p>Clean reputation among community members - trusted source.</p>
+      </div>
       
       <div class="dox-timestamp">
         Last updated: May 10, 2025 | Database ID: DOX-59472
       </div>
     </div>
+    
+    <script>
+
+      document.addEventListener('DOMContentLoaded', function() {
+        const headers = document.querySelectorAll('.dox-content h3');
+        
+        headers.forEach(header => {
+          const sectionId = header.id.replace('-header', '');
+          const section = document.getElementById(sectionId);
+          
+          header.addEventListener('click', () => {
+
+            header.classList.toggle('active');
+            
+
+            section.classList.toggle('active');
+          });
+        });
+        
+
+        setTimeout(() => {
+          document.getElementById('personal-info-header').click();
+        }, 500);
+      });
+    </script>
   </div>
 </body>
 </html>
