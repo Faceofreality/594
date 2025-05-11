@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>594 ANTI EXTORT - Upload</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #000000;
+      color: #ffffff;
+      font-family: 'Cinzel', serif;
+      padding: 50px 20px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .back-button {
+      position: fixed;
+      top: 30px;
+      left: 30px;
+      background-color: transparent;
+      color: #ffffff;
+      border: 1px solid #ff0000;
+      padding: 10px 20px;
+      font-family: 'Cinzel', serif;
+      font-size: 14px;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    .back-button:hover {
+      background-color: #ff0000;
+      color: #ffffff;
+      box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+    }
+
+    .title-container {
+      margin-bottom: 60px;
+    }
+
+    .page-title {
+      font-size: 60px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+      text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000;
+      }
+      to {
+        text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000;
+      }
+    }
+    
+    .upload-section {
+      margin: 40px auto;
+      width: 100%;
+      max-width: 600px;
+      background-color: rgba(20, 20, 20, 0.7);
+      border: 1px solid #ff0000;
+      padding: 30px;
+      border-radius: 5px;
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+    }
+    
+    .upload-title {
+      font-size: 24px;
+      margin-bottom: 20px;
+      text-shadow: 0 0 10px #ff0000;
+    }
+    
+    .upload-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      width: 100%;
+    }
+    
+    .input-group {
+      width: 100%;
+      text-align: left;
+    }
+    
+    .input-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 14px;
+      letter-spacing: 1px;
+      color: #ccc;
+    }
+    
+    .input-group input {
+      width: 100%;
+      padding: 12px;
+      background-color: #222;
+      border: 1px solid #444;
+      color: white;
+      font-family: 'Cinzel', serif;
+      border-radius: 3px;
+    }
+    
+    .input-group input:focus {
+      outline: none;
+      border-color: #ff0000;
+      box-shadow: 0 0 8px rgba(255, 0, 0, 0.6);
+    }
+    
+    .file-upload {
+      position: relative;
+      width: 100%;
+    }
+    
+    .file-upload label {
+      display: block;
+      padding: 15px;
+      text-align: center;
+      background-color: #222;
+      border: 1px dashed #444;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .file-upload label:hover {
+      background-color: #333;
+      border-color: #ff0000;
+    }
+    
+    .file-upload input[type="file"] {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: pointer;
+    }
+    
+    .file-name {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #aaa;
+    }
+    
+    .upload-button {
+      background-color: transparent;
+      color: #ffffff;
+      border: 1px solid #ff0000;
+      padding: 12px 25px;
+      font-family: 'Cinzel', serif;
+      font-size: 14px;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      margin-top: 10px;
+    }
+    
+    .upload-button:hover {
+      background-color: #ff0000;
+      color: #ffffff;
+      box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+    }
+    
+    .link-display {
+      margin-top: 20px;
+      width: 100%;
+      display: none;
+    }
+    
+    .share-link {
+      padding: 12px;
+      background-color: #222;
+      border: 1px solid #444;
+      border-radius: 3px;
+      color: #0f0;
+      width: 100%;
+      text-align: center;
+      user-select: all;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+    
+    .copy-button {
+      background-color: transparent;
+      color: #ffffff;
+      border: 1px solid #0f0;
+      padding: 8px 15px;
+      font-family: 'Cinzel', serif;
+      font-size: 12px;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .copy-button:hover {
+      background-color: #0f0;
+      color: #000;
+    }
+    
+    .preview {
+      margin-top: 20px;
+      border: 1px solid #444;
+      padding: 10px;
+      max-width: 100%;
+      border-radius: 3px;
+      display: none;
+    }
+    
+    .preview img, .preview video {
+      max-width: 100%;
+      max-height: 300px;
+      margin-top: 10px;
+    }
+    
+    .button-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 30px;
+    }
+    
+    /* Dark scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      background-color: #111;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background-color: #ff0000;
+      border-radius: 4px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+      background-color: #ff3333;
+    }
+    
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      z-index: 1000;
+      overflow: auto;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .modal-content {
+      background-color: #111;
+      margin: auto;
+      padding: 30px;
+      border: 1px solid #ff0000;
+      width: 80%;
+      max-width: 800px;
+      box-shadow: 0 0 25px rgba(255, 0, 0, 0.5);
+      position: relative;
+      animation: modalFade 0.3s ease;
+    }
+    
+    @keyframes modalFade {
+      from {opacity: 0; transform: translateY(-20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    
+    .close-modal {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: #888;
+      font-size: 24px;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+    
+    .close-modal:hover {
+      color: #ff0000;
+    }
+    
+    .media-container {
+      margin-top: 20px;
+      text-align: center;
+    }
+    
+    .media-container img,
+    .media-container video {
+      max-width: 100%;
+      max-height: 600px;
+      border: 1px solid #333;
+    }
+    
+    .media-title {
+      margin-top: 15px;
+      color: #fff;
+      font-size: 18px;
+    }
+
+    .uploads-list {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .upload-item {
+      background-color: #222;
+      padding: 15px;
+      border-radius: 3px;
+      border: 1px solid #333;
+      text-align: left;
+    }
+
+    .upload-item a {
+      color: #0f0;
+      text-decoration: none;
+    }
+
+    .upload-item a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="back-button">← Back to Main</a>
+  
+  <div class="title-container">
+    <h1 class="page-title">UPLOAD FILES</h1>
+  </div>
+  
+  <div class="upload-section">
+    <div class="upload-form">
+      <div class="input-group">
+        <label for="title">File Title:</label>
+        <input type="text" id="title" placeholder="Enter title for your file">
+      </div>
+      <div class="file-upload">
+        <label for="file-input">DROP FILE HERE OR CLICK TO BROWSE</label>
+        <input type="file" id="file-input" accept="image/*,video/*">
+        <div class="file-name" id="file-name">No file selected</div>
+      </div>
+      <button class="upload-button" id="upload-btn">UPLOAD</button>
+      
+      <div class="link-display" id="link-display">
+        <p>Share this link:</p>
+        <div class="share-link" id="share-link" onclick="copyToClipboard()"></div>
+        <button class="copy-button" onclick="copyToClipboard()">COPY LINK</button>
+      </div>
+      
+      <div class="preview" id="preview">
+        <p>Preview:</p>
+        <div id="preview-content"></div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="button-container">
+    <button class="upload-button" id="my-uploads-btn">MY UPLOADS</button>
+  </div>
+  
+  <!-- Modal for viewing shared content -->
+  <div class="modal" id="media-modal">
+    <div class="modal-content">
+      <span class="close-modal" id="close-modal">&times;</span>
+      <h2 id="modal-title">Media Viewer</h2>
+      <div class="media-container" id="media-container"></div>
+    </div>
+  </div>
+  
+  <script>
+    // DOM Elements
+    const fileInput = document.getElementById('file-input');
+    const fileNameEl = document.getElementById('file-name');
+    const titleInput = document.getElementById('title');
+    const uploadBtn = document.getElementById('upload-btn');
+    const linkDisplay = document.getElementById('link-display');
+    const shareLink = document.getElementById('share-link');
+    const preview = document.getElementById('preview');
+    const previewContent = document.getElementById('preview-content');
+    const modal = document.getElementById('media-modal');
+    const closeModal = document.getElementById('close-modal');
+    const mediaContainer = document.getElementById('media-container');
+    const modalTitle = document.getElementById('modal-title');
+    
+    // File handling
+    fileInput.addEventListener('change', function() {
+      if (this.files && this.files[0]) {
+        fileNameEl.textContent = this.files[0].name;
+        
+        const file = this.files[0];
+        const fileReader = new FileReader();
+        
+        fileReader.onload = function(e) {
+          preview.style.display = 'block';
+          const result = e.target.result;
+          
+          if (file.type.startsWith('image/')) {
+            previewContent.innerHTML = `<img src="${result}" alt="Preview">`;
+          } else if (file.type.startsWith('video/')) {
+            previewContent.innerHTML = `
+              <video controls>
+                <source src="${result}" type="${file.type}">
+                Your browser does not support the video tag.
+              </video>
+            `;
+          }
+        };
+        
+        fileReader.readAsDataURL(file);
+      }
+    });
+    
+    // Upload function
+    uploadBtn.addEventListener('click', function() {
+      const title = titleInput.value.trim();
+      const file = fileInput.files[0];
+      
+      if (!title) {
+        alert('Please enter a title for your file');
+        return;
+      }
+      
+      if (!file) {
+        alert('Please select a file to upload');
+        return;
+      }
+      
+      // Simulating upload and generating a unique ID
+      const fileId = generateUniqueId();
+      const reader = new FileReader();
+      
+      reader.onload = function(e) {
+        // In a real app, you would send this to a server
+        // Here we'll store it in localStorage for demo purposes
+        const fileData = {
+          id: fileId,
+          title: title,
+          type: file.type,
+          data: e.target.result,
+          timestamp: new Date().toISOString()
+        };
+        
+        // Get existing uploads or initialize empty array
+        const uploads = JSON.parse(localStorage.getItem('uploads') || '[]');
+        uploads.push(fileData);
+        localStorage.setItem('uploads', JSON.stringify(uploads));
+        
+        // Generate and display link
+        const baseUrl = window.location.href.split('/').slice(0, -1).join('/');
+        const link = `${baseUrl}/view.html?id=${fileId}`;
+        shareLink.textContent = link;
+        linkDisplay.style.display = 'block';
+        
+        // Success message
+        alert('File uploaded successfully!');
+      };
+      
+      reader.readAsDataURL(file);
+    });
+    
+    // Copy to clipboard function
+    function copyToClipboard() {
+      const copyText = document.getElementById('share-link').textContent;
+      navigator.clipboard.writeText(copyText).then(() => {
+        alert('Link copied to clipboard!');
+      });
+    }
+    
+    // Generate a unique ID
+    function generateUniqueId() {
+      return Date.now().toString(36) + Math.random().toString(36).substr(2, 5);
+    }
+    
+    // My Uploads button
+    document.getElementById('my-uploads-btn').addEventListener('click', function() {
+      const uploads = JSON.parse(localStorage.getItem('uploads') || '[]');
+      
+      if (uploads.length === 0) {
+        alert('You have no uploads yet.');
+        return;
+      }
+      
+      let uploadsHTML = '<h2>My Uploads</h2><div class="uploads-list">';
+      
+      uploads.forEach(upload => {
+        const date = new Date(upload.timestamp).toLocaleDateString();
+        const baseUrl = window.location.href.split('/').slice(0, -1).join('/');
+        const link = `${baseUrl}/view.html?id=${upload.id}`;
+        
+        uploadsHTML += `
+          <div class="upload-item">
+            <div><strong>${upload.title}</strong></div>
+            <div>Uploaded: ${date}</div>
+            <div><a href="${link}" target="_blank">${link}</a></div>
+          </div>
+        `;
+      });
+      
+      uploadsHTML += '</div>';
+      
+      modal.style.display = 'flex';
+      modalTitle.textContent = 'My Uploads';
+      mediaContainer.innerHTML = uploadsHTML;
+    });
+    
+    // Close modal function
+    closeModal.addEventListener('click', function() {
+      modal.style.display = 'none';
+    });
+    
+    // Close modal when clicking outside of it
+    window.addEventListener('click', function(event) {
+      if (event.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
