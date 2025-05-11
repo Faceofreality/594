@@ -7,122 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    body {
-      background-color: #000000;
-      color: #ffffff;
-      font-family: 'Cinzel', serif;
-      padding: 50px 20px;
-      text-align: center;
-    }
-    
-    .title-container {
-      margin-bottom: 80px;
-    }
-    
-    .main-title {
-      font-size: 140px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      margin-bottom: 0;
-      transition: all 0.3s ease;
-    }
-    
-    .main-title:hover {
-      text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
-      transform: scale(1.05);
-    }
-    
-    .subtitle {
-      font-size: 18px;
-      letter-spacing: 8px;
-      margin-top: 5px;
-      color: #ffffff;
-      text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
-      animation: glow 2s ease-in-out infinite alternate;
-    }
-    
-    @keyframes glow {
-      from {
-        text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000;
-      }
-      to {
-        text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000;
-      }
-    }
-    
-    .members {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      flex-wrap: wrap;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    
-    .member {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      transition: transform 0.3s ease;
-    }
-    
-    .member:hover {
-      transform: translateY(-5px);
-    }
-    
-    .avatar {
-      width: 180px;
-      height: 180px;
-      position: relative;
-      margin-bottom: 20px;
-      background-color: #333;
-      overflow: hidden;
-    }
-    
-    .custom-pfp {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: 3;
-    }
-    
-    .member-name {
-      font-size: 16px;
-      font-weight: normal;
-      opacity: 0.9;
-    }
-    
-    .dox-button {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background-color: #ff0000;
-      color: #ffffff;
-      border: none;
-      padding: 12px 24px;
-      font-family: 'Cinzel', serif;
-      font-size: 16px;
-      letter-spacing: 2px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      text-transform: uppercase;
-      box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
-    }
-    
-    .dox-button:hover {
-      background-color: #ffffff;
-      color: #ff0000;
-      box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
-      transform: scale(1.05);
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/index.css">
 </head>
 <body>
   <div class="container">
@@ -134,28 +19,28 @@
     <div class="members">
       <div class="member">
         <div class="avatar">
-          <img src="pfp1.jpg" class="custom-pfp" alt="Scarlett">
+          <img src="assets/pictures/pfp1.jpg" class="custom-pfp" alt="Scarlett">
         </div>
         <div class="member-name">Scarlett</div>
       </div>
       
       <div class="member">
         <div class="avatar">
-          <img src="pfp2.jpg" class="custom-pfp" alt="Cyanide">
+          <img src="assets/pictures/pfp2.jpg" class="custom-pfp" alt="Cyanide">
         </div>
         <div class="member-name">Cyanide</div>
       </div>
       
       <div class="member">
         <div class="avatar">
-          <img src="pfp3.jpg" class="custom-pfp" alt="Factor">
+          <img src="assets/pictures/pfp3.jpg" class="custom-pfp" alt="Factor">
         </div>
         <div class="member-name">Factor</div>
       </div>
       
       <div class="member">
         <div class="avatar">
-          <img src="pfp4.jpg" class="custom-pfp" alt="Sinister">
+          <img src="assets/pictures/pfp4.jpg" class="custom-pfp" alt="Sinister">
         </div>
         <div class="member-name">Sinister</div>
       </div>
