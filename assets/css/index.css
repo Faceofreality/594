@@ -89,15 +89,10 @@ body {
   opacity: 0.9;
 }
 
-.buttons-container {
+.dox-button {
   position: fixed;
   bottom: 30px;
   right: 30px;
-  display: flex;
-  gap: 15px;
-}
-
-.dox-button, .chat-button {
   background-color: #ff0000;
   color: #ffffff;
   border: none;
@@ -111,19 +106,9 @@ body {
   box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
 }
 
-.dox-button:hover, .chat-button:hover {
+.dox-button:hover {
   background-color: #ffffff;
   color: #ff0000;
   box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
   transform: scale(1.05);
-}
-
-.chat-button {
-  background-color: #000000;
-  border: 1px solid #ff0000;
-}
-
-.chat-button:hover {
-  background-color: #ff0000;
-  color: #000000;
 }
